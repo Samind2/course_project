@@ -1,22 +1,32 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-const Search = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const Search = ({ courses, setFilterCourses }) => {
+  const [keyword, setKeyword] = useState("");
 
-  // ฟังก์ชันสำหรับจัดการการเปลี่ยนแปลงของช่องค้นหา
-  const handleChange = (event) => {
-    const value = event.target.value;
-    setSearchTerm(value);
-    onSearch(value); // ส่งค่าการค้นหาไปยังฟังก์ชันที่รับ props
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setKeyword(value);
+
+    if (value === "") {
+      setFilterCourses(courses);
+      return;
+    }
+
+    const result = courses.filter((course) =>
+      course.name.toLowerCase().includes(value.toLowerCase()) ||
+      course.courseCode.toLowerCase().includes(value.toLowerCase())
+    );
+    setFilterCourses(result);
   };
 
   return (
-    <label className="input input-bordered flex items-center gap-2 w-5/6">
+    <label className="input input-bordered flex items-center gap-2 w-5/6 mt-4 justify-center"> {/* เพิ่ม justify-center */}
       <input
         type="text"
         className="grow"
         placeholder="Search"
-        value={searchTerm}
+        value={keyword}
         onChange={handleChange}
       />
       <svg
@@ -33,6 +43,12 @@ const Search = ({ onSearch }) => {
       </svg>
     </label>
   );
+};
+
+// เพิ่ม PropTypes
+Search.propTypes = {
+  courses: PropTypes.array.isRequired,
+  setFilterCourses: PropTypes.func.isRequired,
 };
 
 export default Search;

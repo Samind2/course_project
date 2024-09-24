@@ -1,23 +1,20 @@
-import { useAuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-function UserProfile() {
-  const { user, logout } = useAuthContext();
+function Course() {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
-    navigate("/login"); // Redirect to the login page or another page
+  const handleViewCourseDetails = () => {
+    navigate("/course-details"); // แก้ไขเส้นทางตามที่คุณต้องการ
   };
 
   return (
     <div className="flex items-center">
-      <span className="mr-4">Welcome, {user.userName}</span>
+      <span className="mr-4">Course Management</span>
       <div className="dropdown dropdown-end">
         <div tabIndex="0" role="button" className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
             <img
-              alt="Tailwind CSS Navbar component"
+              alt="Course Thumbnail"
               src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
             />
           </div>
@@ -27,16 +24,13 @@ function UserProfile() {
           className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
         >
           <li>
-            <a className="justify-between">
-              Profile
-              <span className="badge">New</span>
-            </a>
+            <a onClick={handleViewCourseDetails}>View Course Details</a>
           </li>
           <li>
-            <a>Settings</a>
+            <a>Add New Course</a>
           </li>
           <li>
-          <a onClick={handleLogout}>Logout</a>
+            <a>Manage Courses</a>
           </li>
         </ul>
       </div>
@@ -44,4 +38,4 @@ function UserProfile() {
   );
 }
 
-export default UserProfile;
+export default Course;

@@ -1,8 +1,9 @@
 
-
 const RegisterButton = () => {
   return (
-    <button className="btn btn-outline btn-secondary">Register</button>
+    <a href="/register" className="btn btn-outline btn-secondary">
+      Register
+    </a>
   )
 }
 

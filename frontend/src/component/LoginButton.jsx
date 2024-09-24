@@ -1,9 +1,10 @@
 
-
-const LoginButton = () => {
+const loginButton = () => {
   return (
-    <button className="btn btn-outline btn-accent">Login</button>
+    <a href="/login" className="btn btn-outline btn-primary">
+      Login
+    </a>
   )
 }
 
-export default LoginButton
+export default loginButton

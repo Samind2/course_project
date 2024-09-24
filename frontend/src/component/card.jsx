@@ -1,38 +1,48 @@
+import PropTypes from "prop-types";
 
-
-// สร้าง component Card และรับ props ได้แก่ id, courseCode, name, description, credits
 const Card = ({ id, courseCode, name, description, credits }) => {
-  // ฟังก์ชัน handleDelete สำหรับการลบ course
   const handleDelete = async () => {
     try {
-      // ส่ง request ไปที่ server เพื่อทำการลบ course โดยใช้ method DELETE
-      const response = await fetch("http://localhost:5000/courses/" + id, {
+      const response = await fetch(`http://localhost:5000/courses/${id}`, {
         method: "DELETE",
       });
 
-      // ถ้า response โอเค (status code 200-299)
       if (response.ok) {
-        alert("Course has been deleted"); // แจ้งผู้ใช้ว่า course ถูกลบแล้ว
-        window.location.reload(); // reload หน้าเว็บเพื่ออัพเดทรายการ course
+        alert("Course has been deleted");
+        window.location.reload();
       }
     } catch (error) {
-      console.log(error); // ถ้ามี error ในการลบ จะทำการ log error นั้น
+      console.log(error);
     }
   };
 
   return (
-    <div className="card bg-neutral text-neutral-content w-96">
-      <div className="card-body items-center text-center">
-        {/* ใช้ props name และ description */}
-        <h2 className="card-title">{name}</h2>
-        <p>{description || 'No description available'}</p>
+    <div className="card w-80 bg-[#F9F5F6] shadow-xl m-4 border border-[#FDCEDF] rounded-lg overflow-hidden">
+      <div className="card-body p-5">
+        <h2 className="card-title text-[#BE6DB7]">{name}</h2>
+        <p className="text-[#BE6DB7]">{description}</p>
+        <p>Course Code: <span className="font-bold">{courseCode}</span></p>
+        <p>Credits: <span className="font-bold">{credits}</span></p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary" onClick={handleDelete}>Delete</button>
-          <button className="btn btn-ghost">More Info</button>
+          <a className="btn btn-edit" href={`edit/${id}`}>
+            Edit
+          </a>
+          <button className="btn btn-delete" onClick={handleDelete}>
+            Delete
+          </button>
         </div>
       </div>
     </div>
   );
 };
+
+// เพิ่ม PropTypes เพื่อตรวจสอบความถูกต้องของ props ที่ส่งเข้าไปใน component
+Card.propTypes = {
+    id: PropTypes.number.isRequired,
+    courseCode: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    credits: PropTypes.number.isRequired,
+  };
 
 export default Card;
