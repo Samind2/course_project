@@ -3,25 +3,37 @@
 @tailwind utilities;
 
 .btn-edit {
-    background-color: #F8E8EE; /* เปลี่ยนสีพื้นหลัง */
-    color: #5F6F65; /* เปลี่ยนสีข้อความ */
+    background-color: #0f1c53; /* เปลี่ยนสีพื้นหลัง */
+    color: #E1D7B7; /* เปลี่ยนสีข้อความ */
+    transition: background-color 0.3s, color 0.3s; /* เพิ่มการเปลี่ยนแปลงอย่างราบรื่น */
   }
+
+  .btn-edit:hover {
+    background-color: #F6EACB; /* สีพื้นหลังเมื่อเมาส์อยู่เหนือ */
+    color: #1E2A5E; /* สีข้อความเมื่อเมาส์อยู่เหนือ */
+}
   
   .btn-delete {
-    background-color: #FDCEDF; /* เปลี่ยนสีพื้นหลัง */
-    color: #5F6F65; /* เปลี่ยนสีข้อความ */
+    background-color: #F6EACB; /* เปลี่ยนสีพื้นหลัง */
+    color: #0f1c53; /* เปลี่ยนสีข้อความ */
+    transition: background-color 0.3s, color 0.3s; /* เพิ่มการเปลี่ยนแปลงอย่างราบรื่น */
   }
+
+  .btn-delete:hover {
+    background-color: #0f1c53; /* สีพื้นหลังเมื่อเมาส์อยู่เหนือ */
+    color: #F6EACB; /* สีข้อความเมื่อเมาส์อยู่เหนือ */
+}
 
   .dashboard {
     color: #FFFFFF; /* สีข้อความ */
   }
   
   .card {
-    background-color: #535C91; /* สีพื้นหลังของการ์ด */
-    border-color: #535C91; /* สีของกรอบการ์ด */
+    background-color: #D1E9F6; /* สีพื้นหลังของการ์ด */
+    border-color: #b6d5e5; /* สีของกรอบการ์ด */
   }
   
   .card-title {
-    color: #9290C3; /* สีของหัวเรื่องในการ์ด */
+    color: #0f1c53; /* สีของหัวเรื่องในการ์ด */
   }
   

@@ -19,8 +19,8 @@ const Card = ({ id, courseCode, name, description, credits }) => {
   return (
     <div className="card w-80 bg-[#F9F5F6] shadow-xl m-4 border border-[#FDCEDF] rounded-lg overflow-hidden">
       <div className="card-body p-5">
-        <h2 className="card-title text-[#BE6DB7]">{name}</h2>
-        <p className="text-[#BE6DB7]">{description}</p>
+        <h2 className="card-title ">{name}</h2>
+        <p className="text-[#0f1c53]">{description}</p>
         <p>Course Code: <span className="font-bold">{courseCode}</span></p>
         <p>Credits: <span className="font-bold">{credits}</span></p>
         <div className="card-actions justify-end">

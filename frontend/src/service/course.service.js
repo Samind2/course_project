@@ -1,19 +1,19 @@
 import api from "./api";
 
 const getAllCourses = () => {
-  return api.get("/api/v1/courses"); // ดึงข้อมูลหลักสูตรทั้งหมด
+  return api.get("/api/v1/courses");
 };
 
 const createCourse = (data) => {
-  return api.post("/api/v1/courses", data); // สร้างหลักสูตรใหม่
+  return api.post("/api/v1/courses", data);
 };
 
 const updateCourse = (id, data) => {
-  return api.put(`/api/v1/courses/${id}`, data); // อัปเดตหลักสูตรที่มีอยู่
+  return api.put(`/api/v1/courses/${id}`, data);
 };
 
 const deleteCourse = (id) => {
-  return api.delete(`/api/v1/courses/${id}`); // ลบหลักสูตรที่มีอยู่
+  return api.delete(`/api/v1/courses/${id}`);
 };
 
 const courseservice = {
@@ -23,4 +23,4 @@ const courseservice = {
   deleteCourse,
 };
 
-export default courseservice; 
+export default courseservice;

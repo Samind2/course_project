@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav
       className="navbar p-5 shadow-lg rounded-lg"
-      style={{ backgroundColor: "#C9DABF" }}
+      style={{ backgroundColor: "#D1E9F6" }}
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -22,7 +22,7 @@ const Navbar = () => {
             tabIndex={0}
             role="button"
             className="btn btn-ghost btn-circle text-white"
-            style={{ color: "#5F6F65" }}
+            style={{ color: "#D1E9F6" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ const Navbar = () => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              style={{ stroke: "#808D7C" }}
+              style={{ stroke: "#D1E9F6" }}
             >
               <path
                 strokeLinecap="round"
@@ -43,7 +43,7 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className="menu dropdown-content mt-3 p-2 shadow-lg bg-white text-black rounded-box w-52"
-            style={{ backgroundColor: "#9CA986", color: "#5F6F65" }}
+            style={{ backgroundColor: "#D1E9F6", color: "#1E2A5E" }}
           >
             <li>
               <a href="/" className="hover:bg-indigo-200">
@@ -62,7 +62,7 @@ const Navbar = () => {
       <div className="navbar-end flex items-center space-x-4">
         {currentUser ? ( // เปลี่ยนจาก user เป็น currentUser
           <>
-            <div className="text-lg" style={{ color: "#5F6F65" }}>
+            <div className="text-lg" style={{ color: "#1E2A5E" }}>
               <span>Welcome, </span>
               <span className="font-semibold">{currentUser.Username}</span>
               {/* ชื่อของผู้ใช้ที่เข้าสู่ระบบ */}
@@ -70,7 +70,7 @@ const Navbar = () => {
                 <span
                   key={index}
                   className="ml-2 px-2 py-1 bg-indigo-700 text-white rounded-full text-xs"
-                  style={{ backgroundColor: "#808D7C", color: "#C9DABF" }}
+                  style={{ backgroundColor: "#1E2A5E", color: "#E1D7B7" }}
                 >
                   {role}
                 </span>
@@ -81,7 +81,7 @@ const Navbar = () => {
             <button
               onClick={handleLogout}
               className="btn btn-outline btn-white hover:bg-white hover:text-indigo-600"
-              style={{ borderColor: "#808D7C", color: "#5F6F65" }}
+              style={{ borderColor: "#1E2A5E", color: "#5F6F65" }}
             >
               Logout
             </button>

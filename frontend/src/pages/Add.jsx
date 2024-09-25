@@ -3,7 +3,6 @@ import { useState } from "react"; // นำเข้า useState จาก React
 function Add() {
   // สร้าง state สำหรับเก็บข้อมูล course
   const [course, setCourse] = useState({
-    id: "",
     courseCode: "",
     name: "",
     description: "",
@@ -20,10 +19,32 @@ function Add() {
   };
 
   // ฟังก์ชันจัดการการส่งฟอร์ม
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // คุณสามารถเพิ่มฟังก์ชันในการเพิ่ม course ไปที่ backend ได้ที่นี่
-    console.log(course);
+    try {
+      const response = await fetch("http://localhost:5000/api/v1/courses", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(course),
+      });
+
+      if (response.ok) {
+        alert("Course added successfully");
+        // ทำการรีเซ็ตฟอร์มหลังจากการเพิ่มสำเร็จ
+        setCourse({
+          courseCode: "",
+          name: "",
+          description: "",
+          credits: ""
+        });
+      } else {
+        alert("Failed to add course");
+      }
+    } catch (error) {
+      console.log("Error adding course:", error);
+    }
   };
 
   return (
@@ -31,55 +52,44 @@ function Add() {
       <h1 className="text-2xl text-center mb-4">Add Courses</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <label className="input input-bordered flex items-center gap-2">
-          id
+          Course Code
           <input
             type="text"
             className="grow p-2 border border-gray-300 rounded"
-            placeholder="id"
-            name="id"
-            onChange={handleChange}
-            value={course.id}
-          />
-        </label>
-        <label className="input input-bordered flex items-center gap-2">
-          courseCode
-          <input
-            type="text"
-            className="grow p-2 border border-gray-300 rounded"
-            placeholder="courseCode"
+            placeholder="Course Code"
             name="courseCode"
             onChange={handleChange}
             value={course.courseCode}
           />
         </label>
         <label className="input input-bordered flex items-center gap-2">
-          name
+          Name
           <input
             type="text"
             className="grow p-2 border border-gray-300 rounded"
-            placeholder="name"
+            placeholder="Name"
             name="name"
             onChange={handleChange}
             value={course.name}
           />
         </label>
         <label className="input input-bordered flex items-center gap-2">
-          description
+          Description
           <input
             type="text"
             className="grow p-2 border border-gray-300 rounded"
-            placeholder="description"
+            placeholder="Description"
             name="description"
             onChange={handleChange}
             value={course.description}
           />
         </label>
         <label className="input input-bordered flex items-center gap-2">
-          credits
+          Credits
           <input
             type="text"
             className="grow p-2 border border-gray-300 rounded"
-            placeholder="credits"
+            placeholder="Credits"
             name="credits"
             onChange={handleChange}
             value={course.credits}
@@ -89,7 +99,7 @@ function Add() {
           className="btn btn-success bg-green-500 text-white py-2 px-4 rounded mx-auto block"
           type="submit"
         >
-          Add Courses
+          Add Course
         </button>
       </form>
     </div>

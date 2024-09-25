@@ -1,10 +1,9 @@
-
 const loginButton = () => {
-  return (
-    <a href="/login" className="btn btn-outline btn-primary">
-      Login
-    </a>
-  )
-}
+    return (
+        <a href="/login" className="btn btn-delete">
+          Login
+        </a>
+      )
+    }
 
 export default loginButton
