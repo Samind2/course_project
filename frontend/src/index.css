@@ -36,4 +36,14 @@
   .card-title {
     color: #0f1c53; /* สีของหัวเรื่องในการ์ด */
   }
+
+  .btn-success {
+    background-color: #0f1c53; /* เปลี่ยนสีพื้นหลัง */
+    color: #E1D7B7; /* เปลี่ยนสีข้อความ */
+    transition: background-color 0.3s, color 0.3s; /* เพิ่มการเปลี่ยนแปลงอย่างราบรื่น */
+  }
   
+  .btn-success:hover {
+    background-color: #F6EACB; /* สีพื้นหลังเมื่อเมาส์อยู่เหนือ */
+    color: #1E2A5E; /* สีข้อความเมื่อเมาส์อยู่เหนือ */
+}

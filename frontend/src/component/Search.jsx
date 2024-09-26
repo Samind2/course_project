@@ -9,7 +9,7 @@ const Search = ({ courses, setFilterCourses }) => {
     setKeyword(value);
 
     if (value === "") {
-      setFilterCourses(courses);
+      setFilterCourses(courses); // รีเซ็ต filterCourses เป็น courses ถ้าไม่มีการค้นหา
       return;
     }
 
@@ -21,7 +21,7 @@ const Search = ({ courses, setFilterCourses }) => {
   };
 
   return (
-    <label className="input input-bordered flex items-center gap-2 w-5/6 mt-4 justify-center"> {/* เพิ่ม justify-center */}
+    <label className="input input-bordered flex items-center gap-2 w-5/6 mt-4 justify-center">
       <input
         type="text"
         className="grow"

@@ -1,15 +1,20 @@
 import PropTypes from "prop-types";
+import { useCourse } from "../contexts/course.context";
 
 const Card = ({ id, courseCode, name, description, credits }) => {
+  const { currentUser: user } = useCourse(); // ใช้ currentUser จาก context
+
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/courses/${id}`, {
+      const response = await fetch(`http://localhost:5000/api/v1/courses/${id}`, {
         method: "DELETE",
       });
 
       if (response.ok) {
         alert("Course has been deleted");
         window.location.reload();
+      } else {
+        alert("Failed to delete the course");
       }
     } catch (error) {
       console.log(error);

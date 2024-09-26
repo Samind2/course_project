@@ -1,54 +1,59 @@
 import { createBrowserRouter } from "react-router-dom"; 
-import MainLayout from "../layoust/MainLayout.jsx";
+import MainLayout from "../layoust/MainLayout.jsx"
 import Add from "../pages/Add.jsx";
 import Home from "../pages/Home.jsx";
-import Dashboard from "../pages/dashboard"; // แก้ไขชื่อจาก Dashbard เป็น Dashboard
+import Dashboard from "../pages/dashboard/index.jsx";
 import Edit from "../pages/Edit.jsx";
-import Login from "../pages/Login.jsx"; // นำเข้า Login component
-import Register from "../pages/Register.jsx"
-
-// กำหนดตัวแปรสำหรับเส้นทาง
-const ROUTES = {
-  HOME: "/",
-  DASHBOARD: "/dashboard",
-  ADD: "/add",
-  EDIT: "/edit/:id",
-  LOGIN: "/login",
-  REGISTER: "/register"
-};
+import Login from "../pages/Login.jsx"; 
+import Register from "../pages/Register.jsx";
+import ProtectedRoute from "../pages/ProtectedRoute.jsx";
+import NotAllowed from "../pages/NotAllowed.jsx";
 
 const router = createBrowserRouter([
   {
-    path: ROUTES.HOME, 
+    path: "/", // เส้นทางเริ่มต้น
     element: <MainLayout />,
+    errorElement: <NotAllowed />, // ระบุ errorElement
     children: [
       {
-        path: ROUTES.HOME, 
-        element: <Home />, 
+        path: "/", // เส้นทางไปหน้า Home
+        element: <Home />,
       },
       {
-        path: ROUTES.DASHBOARD, 
-        element: <Dashboard />, 
+        path: "/dashboard", // เส้นทางไปหน้า Dashboard
+        element: (
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        ),
       },
       {
-        path: ROUTES.ADD, 
-        element: <Add />, 
+        path: "/add", // เส้นทางไปหน้า Add
+        element: (
+          <ProtectedRoute>
+            <Add />
+          </ProtectedRoute>
+        ),
       },
       {
-        path: ROUTES.EDIT, 
-        element: <Edit />, 
+        path: "/edit/:id", // ปรับเส้นทางไปหน้า Edit ให้รับ id
+        element: (
+          <ProtectedRoute>
+            <Edit />
+          </ProtectedRoute>
+        ),
       },
       {
-        path: ROUTES.LOGIN, // เพิ่มเส้นทางสำหรับ login
-        element: <Login />, // คอมโพเนนต์สำหรับการเข้าสู่ระบบ
+        path: "/login", // เส้นทางไปหน้า Login
+        element: <Login />,
       },
       {
-        path: ROUTES.REGISTER, // เพิ่มเส้นทางสำหรับ login
-        element: <Register />, // คอมโพเนนต์สำหรับการเข้าสู่ระบบ
+        path: "/register", // เส้นทางไปหน้า Register
+        element: <Register />,
       },
       {
-        path:"user",
-        element:<div>user</div>
+        path: "/not-allowed", // เส้นทางไปหน้า NotAllowed
+        element: <NotAllowed />,
       },
     ],
   },

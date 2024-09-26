@@ -117,7 +117,7 @@ const Edit = () => {
           />
         </label>
         <button
-          className="btn btn-success bg-green-500 text-white py-2 px-4 rounded mx-auto block"
+          className="btn btn-success py-2 px-4 rounded mx-auto block"
           type="submit"
         >
           Save Changes

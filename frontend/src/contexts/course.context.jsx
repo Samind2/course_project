@@ -8,12 +8,13 @@ export const CourseProvider = ({ children }) => {
     const [courses, setCourses] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [currentUser, setCurrentUser] = useState(getCurrentUser()); // สถานะสำหรับผู้ใช้ปัจจุบัน
+    const [currentUser, setCurrentUser] = useState(getCurrentUser());
 
     function getCurrentUser() {
         const temp = localStorage.getItem("user");
         const savedUser = JSON.parse(temp);
-        return savedUser || null; //ทำให้ค่าเป็นปัจจุบัน หรือ ล่าสุด เสมอ
+        console.log("Current User from Local Storage:", savedUser); // ดูค่าผู้ใช้
+        return savedUser || null;
     }
 
     const fetchCourses = async () => {
@@ -45,14 +46,15 @@ export const CourseProvider = ({ children }) => {
     }, []);
 
     const login = (user) => {
-        setCurrentUser(user); // อัปเดตผู้ใช้ปัจจุบัน
-        localStorage.setItem("user", JSON.stringify(user)); // บันทึกผู้ใช้ใน localStorage
+        console.log("User Logging In:", user); // ดูค่าผู้ใช้ที่ล็อกอิน
+        setCurrentUser(user);
+        localStorage.setItem("user", JSON.stringify(user));
     };
 
-    const logout = () => {
-        setCurrentUser(null); // ทำให้ผู้ใช้เป็น null
-        localStorage.removeItem("user"); // ลบผู้ใช้จาก localStorage
-    };
+      const logout = () => {
+        setCurrentUser(null);
+        localStorage.removeItem("user"); // ลบข้อมูลผู้ใช้เมื่อออกจากระบบ
+      };
 
     const addCourse = async (course) => {
         try {

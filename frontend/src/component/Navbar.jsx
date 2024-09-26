@@ -30,7 +30,7 @@ const Navbar = () => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              style={{ stroke: "#D1E9F6" }}
+              style={{ stroke: "#1E2A5E" }}
             >
               <path
                 strokeLinecap="round"
@@ -52,7 +52,7 @@ const Navbar = () => {
             </li>
             <li>
               <a href="/add" className="hover:bg-indigo-200">
-                Add Restaurant
+                Add Courese
               </a>
             </li>
           </ul>
