@@ -20,11 +20,9 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/dashboard", // เส้นทางไปหน้า Dashboard
+        path: "/dashboard", // เส้นทางไปหน้า Dashboardฤ
         element: (
-          <ProtectedRoute>
             <Dashboard />
-          </ProtectedRoute>
         ),
       },
       {

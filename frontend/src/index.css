@@ -5,7 +5,7 @@
 .btn-edit {
     background-color: #0f1c53; /* เปลี่ยนสีพื้นหลัง */
     color: #E1D7B7; /* เปลี่ยนสีข้อความ */
-    transition: background-color 0.3s, color 0.3s; /* เพิ่มการเปลี่ยนแปลงอย่างราบรื่น */
+    transition: background-color 0.3s, color 0.3s; 
   }
 
   .btn-edit:hover {
@@ -16,7 +16,7 @@
   .btn-delete {
     background-color: #F6EACB; /* เปลี่ยนสีพื้นหลัง */
     color: #0f1c53; /* เปลี่ยนสีข้อความ */
-    transition: background-color 0.3s, color 0.3s; /* เพิ่มการเปลี่ยนแปลงอย่างราบรื่น */
+    transition: background-color 0.3s, color 0.3s; 
   }
 
   .btn-delete:hover {
@@ -40,7 +40,7 @@
   .btn-success {
     background-color: #0f1c53; /* เปลี่ยนสีพื้นหลัง */
     color: #E1D7B7; /* เปลี่ยนสีข้อความ */
-    transition: background-color 0.3s, color 0.3s; /* เพิ่มการเปลี่ยนแปลงอย่างราบรื่น */
+    transition: background-color 0.3s, color 0.3s; 
   }
   
   .btn-success:hover {

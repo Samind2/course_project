@@ -15,6 +15,7 @@ const Search = ({ courses, setFilterCourses }) => {
 
     const result = courses.filter((course) =>
       course.name.toLowerCase().includes(value.toLowerCase()) ||
+      course.description.toLowerCase().includes(value.toLowerCase()) ||
       course.courseCode.toLowerCase().includes(value.toLowerCase())
     );
     setFilterCourses(result);

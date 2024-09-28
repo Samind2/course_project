@@ -84,11 +84,11 @@ const Edit = () => {
           />
         </label>
         <label className="flex flex-col">
-          <span className="mb-2">Course Name</span>
+          <span className="mb-2">Name</span>
           <input
             type="text"
             className="p-2 border border-gray-300 rounded"
-            placeholder="Course Name"
+            placeholder="Name"
             name="name"
             onChange={handleChange}
             value={course.name}

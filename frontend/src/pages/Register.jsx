@@ -69,13 +69,13 @@ function RegisterButton() {
   return (
     <div
       className="flex items-center justify-center min-h-screen"
-      style={{ backgroundColor: "#C9DABF" }}
+      style={{ backgroundColor: "#F7F7F8" }}
     >
       <div
         className="w-full max-w-md p-10 space-y-8 rounded-lg shadow-xl"
-        style={{ backgroundColor: "#9CA986" }}
+        style={{ backgroundColor: "#7C93C3" }}
       >
-        <h2 className="text-3xl font-bold text-center" style={{ color: "#5F6F65" }}>
+        <h2 className="text-3xl font-bold text-center" style={{ color: "#1E2A5E" }}>
           Create an Account
         </h2>
         <form className="space-y-6" onSubmit={handleSubmit}>
@@ -83,7 +83,7 @@ function RegisterButton() {
             <label
               htmlFor="Username" // เปลี่ยนจาก userName เป็น Username
               className="block text-sm font-medium"
-              style={{ color: "#5F6F65" }}
+              style={{ color: "#1E2A5E" }}
             >
               Username
             </label>
@@ -95,9 +95,9 @@ function RegisterButton() {
               onChange={handleChange}
               className="block w-full px-4 py-2 mt-1 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               style={{
-                borderColor: "#808D7C",
-                backgroundColor: "#C9DABF",
-                color: "#5F6F65",
+                borderColor: "#D1E9F6",
+                backgroundColor: "#D1E9F6",
+                color: "#1E2A5E",
               }}
               placeholder="Enter your username"
             />
@@ -111,7 +111,7 @@ function RegisterButton() {
             <label
               htmlFor="email"
               className="block text-sm font-medium"
-              style={{ color: "#5F6F65" }}
+              style={{ color: "#1E2A5E" }}
             >
               Email
             </label>
@@ -123,8 +123,8 @@ function RegisterButton() {
               onChange={handleChange}
               className="block w-full px-4 py-2 mt-1 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               style={{
-                borderColor: "#808D7C",
-                backgroundColor: "#C9DABF",
+                borderColor: "#D1E9F6",
+                backgroundColor: "#D1E9F6",
                 color: "#5F6F65",
               }}
               placeholder="Enter your email"
@@ -139,7 +139,7 @@ function RegisterButton() {
             <label
               htmlFor="password"
               className="block text-sm font-medium"
-              style={{ color: "#5F6F65" }}
+              style={{ color: "#1E2A5E" }}
             >
               Password
             </label>
@@ -151,8 +151,8 @@ function RegisterButton() {
               onChange={handleChange}
               className="block w-full px-4 py-2 mt-1 border rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               style={{
-                borderColor: "#808D7C",
-                backgroundColor: "#C9DABF",
+                borderColor: "#D1E9F6",
+                backgroundColor: "#D1E9F6",
                 color: "#5F6F65",
               }}
               placeholder="Enter your password"
@@ -168,7 +168,7 @@ function RegisterButton() {
               type="submit"
               className="flex justify-center w-full px-4 py-2 text-sm font-medium rounded-md shadow-sm"
               style={{
-                backgroundColor: "#808D7C",
+                backgroundColor: "#1E2A5E",
                 color: "#C9DABF",
               }}
               disabled={loading}
