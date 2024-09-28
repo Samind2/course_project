@@ -21,7 +21,7 @@ const verifyToken = (req, res, next) => {
   });
 };
 
-// Check if user is Instructor
+// Check if user is Instructorฤฤ
 const isInstructor = async (req, res, next) => {
   try {
     const user = await User.findByPk(req.userId);
