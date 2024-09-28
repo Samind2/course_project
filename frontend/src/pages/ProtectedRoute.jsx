@@ -19,7 +19,7 @@ const ProtectedRoute = ({ children }) => {
       }
       
   
-    return <Navigate to="/NotAllowed" />; // ย้ายไปหน้า NotAllowed ในกรณีอื่น
+    return <Navigate to="/NotAllowed" />; // ย้ายไปหน้า NotAllowe ในกรณีที่ไม่มีสิทธิ์
 };
 
 export default ProtectedRoute;
