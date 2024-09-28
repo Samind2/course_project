@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Course from "./../component/Course"; // ตรวจสอบการนำเข้าคอมโพเนนต์ Course
+import Course from "../component/Course"
 import courseservice from "../service/course.service";
 import Swal from "sweetalert2";
 
