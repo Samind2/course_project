@@ -1,7 +1,7 @@
 require("dotenv").config(); // โหลดค่า.env
 const { Op } = require("sequelize");
 const User = require("../models/User.models"); // นำเข้าโมเดล User จากไฟล์โมเดลที่เกี่ยวข้อง
-const Role = require("../models/role.model"); // นำเข้าโมเดล Role
+const Role = require("../models/Role.model"); // นำเข้าโมเดล Role
 const bcrypt = require("bcryptjs"); // ใช้ bcrypt เพื่อเข้ารหัสรหัสผ่าน
 const jwt = require("jsonwebtoken"); // ใช้ jwt เพื่อสร้าง JSON Web Token สำหรับการยืนยันตัวตน
 const config = require("../config/auth.config")
