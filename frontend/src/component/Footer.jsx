@@ -1,4 +1,4 @@
-
+//ส่วนท้ายของหน้าเว็บซึ่งจะใส่ข้อมูลต่างๆและลิขสิทธิ์ต่างๆ
 const Footer = () => {
   return (
     <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
