@@ -1,5 +1,5 @@
 const User = require("../models/User.models.js");
-const Role = require("../models/role.model");
+const Role = require("../models/Role.model");
 const { Op } = require("sequelize");
 
 const checkDuplicateUsernameOrEmail = async (req, res, next) => {
