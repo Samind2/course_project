@@ -1,8 +1,7 @@
 const sequelize = require("./db")
 const Sequelize = require("sequelize");
 const User = require("./User.models")
-const Role = require("./role.model");
-
+const Role = require("./Role.model");
 
 const db = {};
 db.Sequelize = Sequelize;
