@@ -16,7 +16,7 @@
   .btn-delete {
     background-color: #F6EACB; /* เปลี่ยนสีพื้นหลัง */
     color: #0f1c53; /* เปลี่ยนสีข้อความ */
-    transition: background-color 0.3s, color 0.3s; 
+    transition: background-color 0.3s, color 0.3s;
   }
 
   .btn-delete:hover {
